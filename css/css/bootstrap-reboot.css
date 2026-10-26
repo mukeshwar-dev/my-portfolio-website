@@ -1,628 +1,312 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Subina Thapa | Full Stack Flutter Developer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Template CSS (keep if you have these files) -->
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+< !DOCTYPE html><html lang="en"><head><title>Subina Thapa | Full Stack Flutter Developer</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">< !-- Template CSS (keep if you have these files) --><link rel="stylesheet" href="css/open-iconic-bootstrap.min.css"><link rel="stylesheet" href="css/animate.css"><link rel="stylesheet" href="css/owl.carousel.min.css"><link rel="stylesheet" href="css/owl.theme.default.min.css"><link rel="stylesheet" href="css/magnific-popup.css"><link rel="stylesheet" href="css/aos.css"><link rel="stylesheet" href="css/ionicons.min.css"><link rel="stylesheet" href="css/flaticon.css"><link rel="stylesheet" href="css/icomoon.css"><link rel="stylesheet" href="css/style.css"><style>
 
-    <style>
-      /* Additional professional styling (unchanged) */
-      .skill-progress {
-        margin-bottom: 2rem;
-      }
-      .skill-progress .progress {
-        height: 0.8rem;
-        border-radius: 0.5rem;
-        background: rgba(255,255,255,0.1);
-      }
-      .skill-progress .progress-bar {
-        background: #ffbd39;
-        border-radius: 0.5rem;
-      }
-      .skill-title {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-      }
-      .project-card {
-        background: rgba(255,255,255,0.03);
-        border-radius: 1rem;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255,189,57,0.1);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .project-card:hover {
-        transform: translateY(-5px);
-        border-color: #ffbd39;
-        box-shadow: 0 10px 30px -10px rgba(255,189,57,0.2);
-      }
-      .project-img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-bottom: 2px solid #ffbd39;
-      }
-      .project-content {
-        padding: 1.5rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .project-content h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-      }
-      .project-content p {
-        color: rgba(255,255,255,0.7);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        flex: 1;
-      }
-      .project-link {
-        margin-top: 1rem;
-        display: inline-block;
-        color: #ffbd39;
-        text-decoration: none;
-        font-weight: 500;
-        transition: 0.3s;
-      }
-      .project-link:hover {
-        color: #fff;
-      }
-      .edu-card {
-        background: rgba(255,255,255,0.02);
-        border-radius: 1rem;
-        padding: 2rem;
-        border-left: 4px solid #ffbd39;
-        margin-bottom: 1.5rem;
-      }
-      .edu-card .date {
-        color: #ffbd39;
-        font-weight: 500;
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-      .edu-card h3 {
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-      .edu-card .institution {
-        color: rgba(255,255,255,0.6);
-        font-style: italic;
-        margin-bottom: 1rem;
-      }
-      .contact-icon {
-        width: 60px;
-        height: 60px;
-        background: rgba(255,189,57,0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-        color: #ffbd39;
-        font-size: 1.5rem;
-        border: 1px solid rgba(255,189,57,0.3);
-        transition: 0.3s;
-      }
-      .contact-icon:hover {
-        background: #ffbd39;
-        color: #000;
-      }
-      .social-icon {
-        width: 45px;
-        height: 45px;
-        background: rgba(255,255,255,0.05);
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 0.5rem;
-        color: #fff;
-        font-size: 1.2rem;
-        transition: 0.3s;
-        border: 1px solid rgba(255,189,57,0.2);
-      }
-      .social-icon:hover {
-        background: #ffbd39;
-        color: #000;
-        border-color: #ffbd39;
-      }
-      
-      /* ---------- SIDEBAR STYLES (Santosh Adhikari style) ---------- */
-      body {
-        overflow-x: hidden;
-        background: #000; /* match dark theme */
-      }
-      .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 260px;
-        height: 100vh;
-        background: #000;
-        border-right: 1px solid rgba(255,189,57,0.2);
-        padding: 2rem 1rem;
-        z-index: 1000;
-        overflow-y: auto;
-        transition: all 0.3s ease;
-      }
-      .sidebar-brand {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #ffbd39;
-        margin-bottom: 2rem;
-        text-align: center;
-        letter-spacing: 1px;
-        border-bottom: 1px solid rgba(255,189,57,0.3);
-        padding-bottom: 1rem;
-      }
-      .sidebar .nav {
-        flex-direction: column;
-      }
-      .sidebar .nav-item {
-        width: 100%;
-        margin-bottom: 0.5rem;
-      }
-      .sidebar .nav-link {
-        color: rgba(255,255,255,0.8);
-        font-weight: 500;
-        padding: 0.75rem 1rem;
-        border-radius: 0.5rem;
-        transition: all 0.3s;
-        text-align: left;
-        font-size: 1rem;
-        border-left: 3px solid transparent;
-      }
-      .sidebar .nav-link:hover,
-      .sidebar .nav-link.active {
-        color: #ffbd39;
-        background: rgba(255,189,57,0.1);
-        border-left-color: #ffbd39;
-      }
-      /* main content adjustment */
-      .main-content {
-        margin-left: 260px;
-        width: calc(100% - 260px);
-      }
-      /* responsive: on small screens, sidebar becomes top bar */
-      @media (max-width: 768px) {
-        .sidebar {
-          position: relative;
-          width: 100%;
-          height: auto;
-          border-right: none;
-          border-bottom: 1px solid rgba(255,189,57,0.2);
-          padding: 1rem;
-        }
-        .sidebar-brand {
-          margin-bottom: 1rem;
-          font-size: 1.3rem;
-        }
-        .sidebar .nav {
-          flex-direction: row !important;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .sidebar .nav-item {
-          width: auto;
-          margin: 0.25rem;
-        }
-        .sidebar .nav-link {
-          border-left: none;
-          border-bottom: 2px solid transparent;
-          padding: 0.5rem 0.75rem;
-        }
-        .sidebar .nav-link:hover,
-        .sidebar .nav-link.active {
-          border-left-color: transparent;
-          border-bottom-color: #ffbd39;
-        }
-        .main-content {
-          margin-left: 0;
-          width: 100%;
-        }
-      }
-    </style>
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+/* Additional professional styling (unchanged) */
+.skill-progress {
+  margin-bottom: 2rem;
+}
 
-    <!-- ========== LEFT SIDEBAR (Santosh Adhikari style) ========== -->
-    <div class="sidebar site-navbar-target">
-      <div class="sidebar-brand">Subina Thapa</div>
-      <ul class="nav">
-        <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-        <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-        <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
-        <li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li>
-        <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-        <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-      </ul>
-    </div>
+.skill-progress .progress {
+  height: 0.8rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+}
 
-    <!-- ========== MAIN CONTENT ========== -->
-    <div class="main-content">
+.skill-progress .progress-bar {
+  background: #ffbd39;
+  border-radius: 0.5rem;
+}
 
-      <!-- Home Section -->
-      <section id="home-section" class="hero">
-        <div class="home-slider owl-carousel">
-          <div class="slider-item">
-            <div class="overlay"></div>
-            <div class="container">
-              <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-                <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/farhinaa.jpg);">
-                  <div class="overlay"></div>
-                </div>
-                <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                  <div class="text">
-                    <span class="subheading">Hello!</span>
-                    <h1 class="mb-4 mt-3">I'm <span>Subina Thapa</span></h1>
-                    <span id="typing-animation"></span>
-                    <script>
-                      const typingAnimationElement = document.getElementById('typing-animation');
-                      const typingTexts = ['full stack flutter developer'];
-                      function playTypingAnimation(text) {
-                        for (let i = 0; i < text.length; i++) {
-                          setTimeout(() => { typingAnimationElement.textContent += text[i]; }, i * 200);
-                        }
-                        setTimeout(() => {
-                          typingAnimationElement.textContent = '';
-                          playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                        }, text.length * 200);
-                      }
-                      playTypingAnimation(typingTexts[0]);
-                    </script>
-                    <br><br>
-                    <p><a href="https://github.com/subinathapa2004" class="btn btn-primary py-3 px-4">GitHub</a> 
-                      <a href="https://github.com/subinathapa2004" class="btn btn-white btn-outline-white py-3 px-4">My Works</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+.skill-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
 
-      <!-- About Section -->
-      <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-        <div class="container">
-          <div class="row d-flex align-items-stretch">
-            <div class="col-md-6 col-lg-5 d-flex">
-              <div class="img-about img d-flex align-items-stretch">
-                <div class="overlay">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="images/gggg.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Subina Thapa</span></p>
-                        <p><span class="title-s">Job Role: </span> <span>Full Stack Flutter Developer</span></p>
-                        <p><span class="title-s">Address: </span> <span>Kathmandu, Suyuchatar</span></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skills Snapshot</p>
-                    <span>Flutter</span> <span class="pull-right">85%</span>
-                    <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
-                    <span>Django</span> <span class="pull-right">75%</span>
-                    <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
-                    <span>Firebase</span> <span class="pull-right">80%</span>
-                    <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
-                    <span>PostgreSQL</span> <span class="pull-right">70%</span>
-                    <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-              <div class="row justify-content-start pb-3">
-                <div class="col-md-12 heading-section ftco-animate">
-                  <h1 class="big">About</h1>
-                  <h2 class="mb-4">About Me</h2>
-                  <p>Hi! I'm Subina Thapa, an aspiring Full Stack Flutter Developer. I work with Flutter | Dart | REST APIs | Firebase | Django | PostgreSQL and various modern tools. I love exploring new technologies and turning ideas into functional, creative projects. My passion is building useful and innovative applications that solve real problems.</p>
-                  <ul class="about-info mt-4 px-md-0 px-2">
-                    <li class="d-flex"><span>Profile:</span> <span>Full Stack Flutter Developer</span></li>
-                    <li class="d-flex"><span>Education:</span> <span>Bachelor of Computer Application</span></li>
-                    <li class="d-flex"><span>Language:</span> <span>English, Nepali</span></li>
-                    <li class="d-flex"><span>Interest:</span> <span>Traveling, Photography</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="counter-wrap ftco-animate d-flex mt-md-3">
-                <div class="text">
-                  <p class="mb-4"><span class="number" data-number="30">0</span> <span>+</span> <span>&nbsp; Projects Completed</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 189, 57, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-      <!-- Skills Section -->
-      <section class="ftco-section ftco-no-pb" id="skills-section">
-        <div class="container">
-          <div class="row justify-content-center pb-5">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-              <h1 class="big big-2">Skills</h1>
-              <h2 class="mb-4">Technical Expertise</h2>
-              <p>Core competencies and proficiency levels</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="skill-progress">
-                <div class="skill-title"><span>Flutter & Dart</span> <span>90%</span></div>
-                <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
-              </div>
-              <div class="skill-progress">
-                <div class="skill-title"><span>Django</span> <span>80%</span></div>
-                <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
-              </div>
-              <div class="skill-progress">
-                <div class="skill-title"><span>Firebase</span> <span>85%</span></div>
-                <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="skill-progress">
-                <div class="skill-title"><span>PostgreSQL</span> <span>75%</span></div>
-                <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
-              </div>
-              <div class="skill-progress">
-                <div class="skill-title"><span>REST APIs</span> <span>85%</span></div>
-                <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
-              </div>
-              <div class="skill-progress">
-                <div class="skill-title"><span>Next.js / TypeScript</span> <span>60%</span></div>
-                <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-5">
-            <div class="col-md-12 text-center">
-              <p><em>... plus Git, CI/CD, MVVM architecture, and agile methodologies.</em></p>
-            </div>
-          </div>
-        </div>
-      </section>
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffbd39;
+  box-shadow: 0 10px 30px -10px rgba(255, 189, 57, 0.2);
+}
 
-      <!-- Education Section -->
-      <section class="ftco-section" id="education-section">
-        <div class="container">
-          <div class="row justify-content-center pb-5">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-              <h1 class="big big-2">Education</h1>
-              <h2 class="mb-4">Academic Background</h2>
-              <p>Formal qualifications and coursework</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="edu-card">
-                <span class="date">2023 – Present</span>
-                <h3>Bachelor of Computer Application (BCA)</h3>
-                <div class="institution">Tribhuvan University, Kathmandu</div>
-                <p>Relevant coursework: Data Structures, Database Management, Web Technologies, Software Engineering, and Mobile App Development. Currently in final year with focus on Flutter and full‑stack projects.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="edu-card">
-                <span class="date">2021 – 2023</span>
-                <h3>+2 Computer Science</h3>
-                <div class="institution">Nepal Kasthamandap SS/College, Kathmandu</div>
-                <p>Completed +2 in Computer Science with major subjects: Mathematics, Physics, and Computer Science. Scored 3.6 GPA.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #ffbd39;
+}
 
-      <!-- Projects Section -->
-      <section class="ftco-section" id="projects-section">
-        <div class="container">
-          <div class="row justify-content-center pb-5">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-              <h1 class="big big-2">Projects</h1>
-              <h2 class="mb-4">My Work</h2>
-              <p>Real-world applications built with Flutter and modern stacks</p>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Project A -->
-            <div class="col-md-4 d-flex ftco-animate">
-              <div class="project-card">
-                <img src="images/proj_a.jpg" alt="Student Management System" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Student+Management'">
-                <div class="project-content">
-                  <h3>Student Management System</h3>
-                  <p>A comprehensive Flutter app for managing student records, attendance, and grades. Uses Firebase for backend and real-time updates.</p>
-                  <a href="https://github.com/subinathapa2004/studentmanagementsystem" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Project B -->
-            <div class="col-md-4 d-flex ftco-animate">
-              <div class="project-card">
-                <img src="images/proj_b.jpg" alt="E-Commerce App" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=E-Commerce+App'">
-                <div class="project-content">
-                  <h3>E-Commerce App</h3>
-                  <p>Full-featured e-commerce mobile app with Flutter, Firebase Auth, Cloud Firestore, and integrated payment gateway.</p>
-                  <a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Project C -->
-            <div class="col-md-4 d-flex ftco-animate">
-              <div class="project-card">
-                <img src="images/proj_c.jpg" alt="Expense Tracker" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Expense+Tracker'">
-                <div class="project-content">
-                  <h3>Expense Tracker</h3>
-                  <p>Cross-platform expense management app built with Flutter and BLoC pattern. Uses SQLite for local storage and syncs with Django REST API.</p>
-                  <a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <!-- Project D -->
-            <div class="col-md-4 d-flex ftco-animate">
-              <div class="project-card">
-                <img src="images/proj_d.jpg" alt="News Aggregator" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=News+Aggregator'">
-                <div class="project-content">
-                  <h3>News Aggregator</h3>
-                  <p>News app consuming multiple REST APIs, with offline reading, search, and category filters. State management with Provider.</p>
-                  <a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Project E -->
-            <div class="col-md-4 d-flex ftco-animate">
-              <div class="project-card">
-                <img src="images/proj_e.jpg" alt="Chatbot Interface" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Chatbot+Interface'">
-                <div class="project-content">
-                  <h3>Chatbot Interface</h3>
-                  <p>Flutter-based chatbot UI integrated with Dialogflow for natural language processing, used for customer support automation.</p>
-                  <a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Project F -->
-            <div class="col-md-4 d-flex ftco-animate">
-              <div class="project-card">
-                <img src="images/proj_f.jpg" alt="Task Manager" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Task+Manager'">
-                <div class="project-content">
-                  <h3>Task Manager</h3>
-                  <p>Collaborative task management app with real-time updates using Firebase Realtime Database. Includes authentication and push notifications.</p>
-                  <a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+.project-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-      <!-- Hire Me / GitHub Callout -->
-      <section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg); margin-top: 2rem;">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8 ftco-animate text-center">
-              <h2>More projects on <span>GitHub</span></h2>
-              <p class="mb-4">I love solving problems and building useful applications. Check out my repositories for more work.</p>
-              <p><a href="https://github.com/subinathapa2004" class="btn btn-primary py-3 px-5">Visit GitHub</a></p>
-            </div>
-          </div>
-        </div>
-      </section>
+.project-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
 
-      <!-- Contact Section -->
-      <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-        <div class="container">
-          <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-              <h1 class="big big-2">Contact</h1>
-              <h2 class="mb-4">Get In Touch</h2>
-              <p>Let's collaborate on your next project</p>
-            </div>
-          </div>
-          <div class="row d-flex contact-info mb-5">
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-              <div class="align-self-stretch box p-4 text-center">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <h3 class="mb-3">Address</h3>
-                <p>Kathmandu, Suyuchatar</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-              <div class="align-self-stretch box p-4 text-center">
-                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                <h3 class="mb-3">Phone</h3>
-                <p><a href="tel://9741698460">+977 9741698460</a></p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-              <div class="align-self-stretch box p-4 text-center">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <h3 class="mb-3">Email</h3>
-                <p><a href="mailto:subinathapa5510@gmail.com">subinathapa5510@gmail.com</a></p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-              <div class="align-self-stretch box p-4 text-center">
-                <div class="contact-icon"><i class="fas fa-globe"></i></div>
-                <h3 class="mb-3">Website</h3>
-                <p><a href="#">subinathapa.dev</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-5">
-            <div class="col-md-12 text-center">
-              <div class="social-links">
-                <a href="https://github.com/subinathapa2004" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/subina-thapa-6800a934a/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/subina.thapa.769940" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/stories/subinathapa22/" class="social-icon"><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+.project-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
 
-      <footer class="ftco-footer ftco-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Subina Thapa</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+.project-link {
+  margin-top: 1rem;
+  display: inline-block;
+  color: #ffbd39;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
-    </div> <!-- .main-content -->
+.project-link:hover {
+  color: #fff;
+}
 
-    <!-- loader (optional) -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+.edu-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+  padding: 2rem;
+  border-left: 4px solid #ffbd39;
+  margin-bottom: 1.5rem;
+}
 
-    <!-- jQuery and Bootstrap JS from CDN -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+.edu-card .date {
+  color: #ffbd39;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
 
-    <!-- Template JS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>
+.edu-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.edu-card .institution {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 189, 57, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: #ffbd39;
+  font-size: 1.5rem;
+  border: 1px solid rgba(255, 189, 57, 0.3);
+  transition: 0.3s;
+}
+
+.contact-icon:hover {
+  background: #ffbd39;
+  color: #000;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  border: 1px solid rgba(255, 189, 57, 0.2);
+}
+
+.social-icon:hover {
+  background: #ffbd39;
+  color: #000;
+  border-color: #ffbd39;
+}
+
+/* ---------- SIDEBAR STYLES (Santosh Adhikari style) ---------- */
+body {
+  overflow-x: hidden;
+  background: #000;
+  /* match dark theme */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: #000;
+  border-right: 1px solid rgba(255, 189, 57, 0.2);
+  padding: 2rem 1rem;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffbd39;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 189, 57, 0.3);
+  padding-bottom: 1rem;
+}
+
+.sidebar .nav {
+  flex-direction: column;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  text-align: left;
+  font-size: 1rem;
+  border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  color: #ffbd39;
+  background: rgba(255, 189, 57, 0.1);
+  border-left-color: #ffbd39;
+}
+
+/* main content adjustment */
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
+
+/* responsive: on small screens, sidebar becomes top bar */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 189, 57, 0.2);
+    padding: 1rem;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .sidebar .nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sidebar .nav-item {
+    width: auto;
+    margin: 0.25rem;
+  }
+
+  .sidebar .nav-link {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .sidebar .nav-link:hover,
+  .sidebar .nav-link.active {
+    border-left-color: transparent;
+    border-bottom-color: #ffbd39;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+</style></head><body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">< !--==========LEFT SIDEBAR (Santosh Adhikari style)==========--><div class="sidebar site-navbar-target"><div class="sidebar-brand">Subina Thapa</div><ul class="nav"><li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li><li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li><li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li><li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li><li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li><li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li></ul></div>< !--==========MAIN CONTENT==========--><div class="main-content">< !-- Home Section --><section id="home-section" class="hero"><div class="home-slider owl-carousel"><div class="slider-item"><div class="overlay"></div><div class="container"><div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true"><div class="one-third js-fullheight order-md-last img" style="background-image:url(images/farhinaa.jpg);"><div class="overlay"></div></div><div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }"><div class="text"><span class="subheading">Hello !</span><h1 class="mb-4 mt-3">I'm <span>Subina Thapa</span></h1>
+ <span id="typing-animation"></span><script>const typingAnimationElement=document.getElementById('typing-animation');
+const typingTexts=['full stack flutter developer'];
+
+function playTypingAnimation(text) {
+  for (let i=0; i < text.length; i++) {
+    setTimeout(()=> {
+        typingAnimationElement.textContent +=text[i];
+      }
+
+      , i * 200);
+  }
+
+  setTimeout(()=> {
+      typingAnimationElement.textContent='';
+      playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+    }
+
+    , text.length * 200);
+}
+
+playTypingAnimation(typingTexts[0]);
+</script><br><br><p><a href="https://github.com/subinathapa2004" class="btn btn-primary py-3 px-4">GitHub</a><a href="https://github.com/subinathapa2004" class="btn btn-white btn-outline-white py-3 px-4">My Works</a></p></div></div></div></div></div></div></section>< !-- About Section --><section class="ftco-about img ftco-section ftco-no-pb" id="about-section"><div class="container"><div class="row d-flex align-items-stretch"><div class="col-md-6 col-lg-5 d-flex"><div class="img-about img d-flex align-items-stretch"><div class="overlay"><div class="row"><div class="col-sm-6 col-md-5"><div class="about-img"><img src="images/gggg.jpg" class="img-fluid rounded b-shadow-a" alt=""></div></div><div class="col-sm-6 col-md-7"><div class="about-info"><p><span class="title-s">Name: </span><span>Subina Thapa</span></p><p><span class="title-s">Job Role: </span><span>Full Stack Flutter Developer</span></p><p><span class="title-s">Address: </span><span>Kathmandu,
+Suyuchatar</span></p></div></div></div><div class="skill-mf"><p class="title-s">Skills Snapshot</p><span>Flutter</span><span class="pull-right">85%</span><div class="progress"><div class="progress-bar" style="width:85%"></div></div><span>Django</span><span class="pull-right">75%</span><div class="progress"><div class="progress-bar" style="width:75%"></div></div><span>Firebase</span><span class="pull-right">80%</span><div class="progress"><div class="progress-bar" style="width:80%"></div></div><span>PostgreSQL</span><span class="pull-right">70%</span><div class="progress"><div class="progress-bar" style="width:70%"></div></div></div></div></div></div><div class="col-md-6 col-lg-7 pl-lg-5 pb-5"><div class="row justify-content-start pb-3"><div class="col-md-12 heading-section ftco-animate"><h1 class="big">About</h1><h2 class="mb-4">About Me</h2><p>Hi ! I'm Subina Thapa, an aspiring Full Stack Flutter Developer. I work with Flutter | Dart | REST APIs | Firebase | Django | PostgreSQL and various modern tools. I love exploring new technologies and turning ideas into functional, creative projects. My passion is building useful and innovative applications that solve real problems.</p>
+ <ul class="about-info mt-4 px-md-0 px-2"><li class="d-flex"><span>Profile:</span><span>Full Stack Flutter Developer</span></li><li class="d-flex"><span>Education:</span><span>Bachelor of Computer Application</span></li><li class="d-flex"><span>Language:</span><span>English,
+Nepali</span></li><li class="d-flex"><span>Interest:</span><span>Traveling,
+Photography</span></li></ul></div></div><div class="counter-wrap ftco-animate d-flex mt-md-3"><div class="text"><p class="mb-4"><span class="number" data-number="30">0</span><span>+</span><span>&nbsp;
+Projects Completed</span></p></div></div></div></div></div></section>< !-- Skills Section --><section class="ftco-section ftco-no-pb" id="skills-section"><div class="container"><div class="row justify-content-center pb-5"><div class="col-md-7 heading-section text-center ftco-animate"><h1 class="big big-2">Skills</h1><h2 class="mb-4">Technical Expertise</h2><p>Core competencies and proficiency levels</p></div></div><div class="row"><div class="col-md-6"><div class="skill-progress"><div class="skill-title"><span>Flutter & Dart</span><span>90%</span></div><div class="progress"><div class="progress-bar" style="width:90%"></div></div></div><div class="skill-progress"><div class="skill-title"><span>Django</span><span>80%</span></div><div class="progress"><div class="progress-bar" style="width:80%"></div></div></div><div class="skill-progress"><div class="skill-title"><span>Firebase</span><span>85%</span></div><div class="progress"><div class="progress-bar" style="width:85%"></div></div></div></div><div class="col-md-6"><div class="skill-progress"><div class="skill-title"><span>PostgreSQL</span><span>75%</span></div><div class="progress"><div class="progress-bar" style="width:75%"></div></div></div><div class="skill-progress"><div class="skill-title"><span>REST APIs</span><span>85%</span></div><div class="progress"><div class="progress-bar" style="width:85%"></div></div></div><div class="skill-progress"><div class="skill-title"><span>Next.js / TypeScript</span><span>60%</span></div><div class="progress"><div class="progress-bar" style="width:60%"></div></div></div></div></div><div class="row mt-5"><div class="col-md-12 text-center"><p><em>... plus Git,
+CI/CD,
+MVVM architecture,
+and agile methodologies.</em></p></div></div></div></section>< !-- Education Section --><section class="ftco-section" id="education-section"><div class="container"><div class="row justify-content-center pb-5"><div class="col-md-7 heading-section text-center ftco-animate"><h1 class="big big-2">Education</h1><h2 class="mb-4">Academic Background</h2><p>Formal qualifications and coursework</p></div></div><div class="row"><div class="col-md-6"><div class="edu-card"><span class="date">2023 – Present</span><h3>Bachelor of Computer Application (BCA)</h3><div class="institution">Tribhuvan University,
+Kathmandu</div><p>Relevant coursework: Data Structures,
+Database Management,
+Web Technologies,
+Software Engineering,
+and Mobile App Development. Currently in final year with focus on Flutter and full‑stack projects.</p></div></div><div class="col-md-6"><div class="edu-card"><span class="date">2021 – 2023</span><h3>+2 Computer Science</h3><div class="institution">Nepal Kasthamandap SS/College,
+Kathmandu</div><p>Completed+2 in Computer Science with major subjects: Mathematics,
+Physics,
+and Computer Science. Scored 3.6 GPA.</p></div></div></div></div></section>< !-- Projects Section --><section class="ftco-section" id="projects-section"><div class="container"><div class="row justify-content-center pb-5"><div class="col-md-7 heading-section text-center ftco-animate"><h1 class="big big-2">Projects</h1><h2 class="mb-4">My Work</h2><p>Real-world applications built with Flutter and modern stacks</p></div></div><div class="row">< !-- Project A --><div class="col-md-4 d-flex ftco-animate"><div class="project-card"><img src="images/proj_a.jpg" alt="Student Management System" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Student+Management'"><div class="project-content"><h3>Student Management System</h3><p>A comprehensive Flutter app for managing student records,
+attendance,
+and grades. Uses Firebase for backend and real-time updates.</p><a href="https://github.com/subinathapa2004/studentmanagementsystem" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a></div></div></div>< !-- Project B --><div class="col-md-4 d-flex ftco-animate"><div class="project-card"><img src="images/proj_b.jpg" alt="E-Commerce App" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=E-Commerce+App'"><div class="project-content"><h3>E-Commerce App</h3><p>Full-featured e-commerce mobile app with Flutter,
+Firebase Auth,
+Cloud Firestore,
+and integrated payment gateway.</p><a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a></div></div></div>< !-- Project C --><div class="col-md-4 d-flex ftco-animate"><div class="project-card"><img src="images/proj_c.jpg" alt="Expense Tracker" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Expense+Tracker'"><div class="project-content"><h3>Expense Tracker</h3><p>Cross-platform expense management app built with Flutter and BLoC pattern. Uses SQLite for local storage and syncs with Django REST API.</p><a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a></div></div></div></div><div class="row mt-4">< !-- Project D --><div class="col-md-4 d-flex ftco-animate"><div class="project-card"><img src="images/proj_d.jpg" alt="News Aggregator" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=News+Aggregator'"><div class="project-content"><h3>News Aggregator</h3><p>News app consuming multiple REST APIs,
+with offline reading,
+search,
+and category filters. State management with Provider.</p><a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a></div></div></div>< !-- Project E --><div class="col-md-4 d-flex ftco-animate"><div class="project-card"><img src="images/proj_e.jpg" alt="Chatbot Interface" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Chatbot+Interface'"><div class="project-content"><h3>Chatbot Interface</h3><p>Flutter-based chatbot UI integrated with Dialogflow for natural language processing,
+used for customer support automation.</p><a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a></div></div></div>< !-- Project F --><div class="col-md-4 d-flex ftco-animate"><div class="project-card"><img src="images/proj_f.jpg" alt="Task Manager" class="project-img" onerror="this.src='https://via.placeholder.com/400x200?text=Task+Manager'"><div class="project-content"><h3>Task Manager</h3><p>Collaborative task management app with real-time updates using Firebase Realtime Database. Includes authentication and push notifications.</p><a href="https://github.com/subinathapa2004" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a></div></div></div></div></div></section>< !-- Hire Me / GitHub Callout --><section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg); margin-top: 2rem;"><div class="overlay"></div><div class="container"><div class="row justify-content-center"><div class="col-md-8 ftco-animate text-center"><h2>More projects on <span>GitHub</span></h2><p class="mb-4">I love solving problems and building useful applications. Check out my repositories for more work.</p><p><a href="https://github.com/subinathapa2004" class="btn btn-primary py-3 px-5">Visit GitHub</a></p></div></div></div></section>< !-- Contact Section --><section class="ftco-section contact-section ftco-no-pb" id="contact-section"><div class="container"><div class="row justify-content-center mb-5 pb-3"><div class="col-md-7 heading-section text-center ftco-animate"><h1 class="big big-2">Contact</h1><h2 class="mb-4">Get In Touch</h2><p>Let's collaborate on your next project</p>
+ </div></div><div class="row d-flex contact-info mb-5"><div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><h3 class="mb-3">Address</h3><p>Kathmandu,
+Suyuchatar</p></div></div><div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><h3 class="mb-3">Phone</h3><p><a href="tel://9741698460">+977 9741698460</a></p></div></div><div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3 class="mb-3">Email</h3><p><a href="mailto:subinathapa5510@gmail.com">subinathapa5510@gmail.com</a></p></div></div><div class="col-md-6 col-lg-3 d-flex ftco-animate"><div class="align-self-stretch box p-4 text-center"><div class="contact-icon"><i class="fas fa-globe"></i></div><h3 class="mb-3">Website</h3><p><a href="#">subinathapa.dev</a></p></div></div></div><div class="row mt-5"><div class="col-md-12 text-center"><div class="social-links"><a href="https://github.com/subinathapa2004" class="social-icon"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/subina-thapa-6800a934a/" class="social-icon"><i class="fab fa-linkedin-in"></i></a><a href="https://www.facebook.com/subina.thapa.769940" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/stories/subinathapa22/" class="social-icon"><i class="fab fa-instagram"></i></a></div></div></div></div></section><footer class="ftco-footer ftco-section"><div class="container"><div class="row"><div class="col-md-12 text-center"><p>Copyright &copy;
+<script>document.write(new Date().getFullYear());
+</script>All rights reserved | Subina Thapa</p></div></div></div></footer></div>< !-- .main-content -->< !-- loader (optional) --><div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>< !-- jQuery and Bootstrap JS from CDN --><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>< !-- Template JS --><script src="js/jquery.min.js"></script><script src="js/jquery-migrate-3.0.1.min.js"></script><script src="js/jquery.easing.1.3.js"></script><script src="js/jquery.waypoints.min.js"></script><script src="js/jquery.stellar.min.js"></script><script src="js/owl.carousel.min.js"></script><script src="js/jquery.magnific-popup.min.js"></script><script src="js/aos.js"></script><script src="js/jquery.animateNumber.min.js"></script><script src="js/scrollax.min.js"></script><script src="js/main.js"></script></body></html>
