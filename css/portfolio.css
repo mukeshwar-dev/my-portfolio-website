@@ -73,7 +73,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 24px;
+  scroll-padding-top: 96px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -185,6 +185,164 @@ ol {
 }
 
 /* =========================================================
+   Top Navbar
+   ========================================================= */
+
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: rgba(7, 13, 10, 0.7);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.9);
+  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+[data-theme="light"] .top-navbar {
+  background: rgba(245, 250, 247, 0.78);
+  box-shadow: 0 10px 40px -24px rgba(12, 40, 24, 0.25);
+}
+
+.top-navbar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+  padding-block: 10px;
+}
+
+.top-navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.top-navbar__logo-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border-radius: 11px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.top-navbar__logo-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  line-height: 1.12;
+}
+
+.top-navbar__logo-text span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.top-navbar__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.top-navbar__toggle-bars {
+  display: grid;
+  gap: 4px;
+  width: 18px;
+}
+
+.top-navbar__toggle-bars span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.top-navbar__toggle[aria-expanded="true"] .top-navbar__toggle-bars span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.top-navbar__toggle[aria-expanded="true"] .top-navbar__toggle-bars span:nth-child(2) {
+  opacity: 0;
+}
+
+.top-navbar__toggle[aria-expanded="true"] .top-navbar__toggle-bars span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.top-navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.top-navbar__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color var(--transition), background var(--transition);
+}
+
+.top-navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition);
+  opacity: 0.8;
+}
+
+.top-navbar__link:hover {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.top-navbar__link:hover::after {
+  transform: scaleX(1);
+}
+
+.top-navbar__link.active,
+.top-navbar__link[aria-current="page"] {
+  color: var(--accent);
+}
+
+.top-navbar__link.active::after,
+.top-navbar__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
    Layout
    ========================================================= */
 
@@ -193,6 +351,7 @@ ol {
   flex-direction: column;
   min-height: 100vh;
   margin-left: var(--sidebar-w);
+  padding-top: 72px;
   overflow-x: clip;
 }
 
@@ -208,7 +367,7 @@ main {
 .section {
   position: relative;
   padding: 96px 0;
-  scroll-margin-top: 24px;
+  scroll-margin-top: 96px;
 }
 
 .section--muted {
@@ -226,7 +385,7 @@ main {
 
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0;
+  inset: 92px auto 0 0;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -813,10 +972,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
-  padding: 72px 0 40px;
+  min-height: calc(100vh - 72px);
+  padding: 40px 0 40px;
   overflow: hidden;
-  scroll-margin-top: 0;
+  scroll-margin-top: 96px;
 }
 
 .hero__bg {
@@ -2138,7 +2297,11 @@ main {
   }
 
   html {
-    scroll-padding-top: calc(var(--header-h) + 18px);
+    scroll-padding-top: 96px;
+  }
+
+  .top-navbar {
+    display: none;
   }
 
   .mobile-bar {
@@ -2151,6 +2314,7 @@ main {
   }
 
   .sidebar {
+    inset: 0 auto 0 0;
     z-index: 140;
     width: min(86vw, 320px);
     padding-top: 22px;
@@ -2177,11 +2341,11 @@ main {
   .hero {
     min-height: auto;
     padding: 58px 0 36px;
-    scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top));
+    scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top) + 12px);
   }
 
   .section {
-    scroll-margin-top: calc(var(--header-h) + 18px);
+    scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top) + 12px);
   }
 
   .back-to-top {
@@ -2269,6 +2433,47 @@ main {
 
   .site-footer__links {
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 880px) {
+  .top-navbar__toggle {
+    display: flex;
+  }
+
+  .top-navbar__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 16px;
+    left: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+  }
+
+  .top-navbar__menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .top-navbar__link {
+    width: 100%;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .top-navbar__link::after {
+    display: none;
   }
 }
 
@@ -2473,6 +2678,10 @@ main {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .top-navbar__menu {
+    transition: none;
   }
 
   *,

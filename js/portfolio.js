@@ -69,6 +69,56 @@
   });
 
   /* -------------------------------------------------------
+     Top navigation (desktop/mobile)
+     ------------------------------------------------------- */
+
+  var topNavToggle = document.getElementById("topNavToggle");
+  var topNavMenu = document.getElementById("topNavMenu");
+  var topNavLinks = topNavMenu ? Array.prototype.slice.call(topNavMenu.querySelectorAll(".top-navbar__link")) : [];
+
+  function closeTopNav() {
+    if (!topNavToggle || !topNavMenu) return;
+    topNavMenu.classList.remove("is-open");
+    topNavToggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (topNavToggle && topNavMenu) {
+    topNavToggle.addEventListener("click", function () {
+      var isOpen = topNavMenu.classList.contains("is-open");
+      if (isOpen) {
+        closeTopNav();
+      } else {
+        topNavMenu.classList.add("is-open");
+        topNavToggle.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    topNavLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeTopNav();
+        topNavLinks.forEach(function (item) {
+          item.classList.remove("active");
+          item.removeAttribute("aria-current");
+        });
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!topNavMenu.classList.contains("is-open")) return;
+      if (topNavMenu.contains(event.target) || (topNavToggle && topNavToggle.contains(event.target))) return;
+      closeTopNav();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeTopNav();
+      }
+    });
+  }
+
+  /* -------------------------------------------------------
      Mobile navigation
      ------------------------------------------------------- */
 
@@ -151,6 +201,20 @@
     });
   }
 
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var href = link.getAttribute("href");
+      if (!href || href === "#") return;
+      var target = document.querySelector(href);
+      if (!target) return;
+      event.preventDefault();
+      var offset = window.matchMedia("(max-width: 1024px)").matches ? 90 : 96;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: "smooth" });
+      history.pushState(null, "", href);
+    });
+  });
+
   document.addEventListener("keydown", function (event) {
     if (!isMenuOpen()) return;
 
@@ -199,12 +263,8 @@
   var progress = document.getElementById("scrollProgress");
   var backToTop = document.getElementById("backToTop");
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
-  var sections = navLinks
-    .map(function (link) {
-      var id = link.getAttribute("href");
-      return id && id.charAt(0) === "#" ? document.querySelector(id) : null;
-    })
-    .filter(Boolean);
+  var topNavLinksScroll = Array.prototype.slice.call(document.querySelectorAll(".top-navbar__link"));
+  var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
   var ticking = false;
 
   function updateScrollUI() {
@@ -220,7 +280,7 @@
       backToTop.classList.toggle("is-visible", scrollTop > 520);
     }
 
-    var probe = scrollTop + (window.innerHeight * 0.3);
+    var probe = scrollTop + 200;
     var activeId = sections.length ? sections[0].id : "";
 
     sections.forEach(function (section) {
@@ -232,6 +292,17 @@
     }
 
     navLinks.forEach(function (link) {
+      var active = link.getAttribute("href") === "#" + activeId;
+      link.classList.toggle("active", active);
+
+      if (active) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
+    topNavLinksScroll.forEach(function (link) {
       var active = link.getAttribute("href") === "#" + activeId;
       link.classList.toggle("active", active);
 
